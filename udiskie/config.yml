@@ -1,0 +1,18 @@
+program_options:
+  tray: false
+  notify: true
+  automount: true
+  file_manager: xdg-open
+
+device_config:
+  - device_file: "/dev/sda1"
+    is_external: true
+    options: [noexec, nodev]
+    ignore: false
+    automount: false
+  - id_type: ntfs
+    automount: false
+
+notifications:
+  timeout: 1.5
+  device_mounted: 5

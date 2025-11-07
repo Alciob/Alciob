@@ -1,0 +1,83 @@
+{
+	"position": "top",
+	"height": 24,
+	"spacing": 0,
+	"modules-left": [
+		"custom/menu",
+		"sway/workspaces",
+		"sway/mode",
+		"sway/window"
+	],
+	"modules-center": ["clock", "mpris"],
+	"modules-right": [
+		"tray",
+		"sway/language",
+		"pulseaudio",
+		"bluetooth",
+		"network",
+		"battery"
+	],
+	"sway/window": {
+		"max-length": 50
+	},
+	"clock": {
+		"interval": 60,
+		"format": "{:%H:%M}",
+		"tooltip": true,
+		"tooltip-format": "{:%A, %d-%m-%Y}"
+	},
+	"battery": {
+		"bat": "BAT0",
+		"interval": 30,
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{capacity}% {icon}",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"network": {
+		"interface": "wlp1s0",
+		"format-wifi": "{essid} ",
+		"format-disconnected": "",
+		"tooltip-format": "{ipaddr}",
+		"on-click": "nm-connection-editor"
+	},
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% {icon}",
+		"format-muted": "",
+		"format-icons": ["", "", ""],
+		"on-click": "pavucontrol"
+	},
+	"tray": {
+		"icon-size": 15,
+		"spacing": 5,
+		"reverse-direction": true
+	},
+	"sway/language": {
+		"format": "{flag}",
+		"tooltip-format": "{long}"
+	},
+	"custom/menu": {
+		"format": " Menu",
+		"tooltip": false,
+		"on-click": "nwg-drawer"
+	},
+	"bluetooth": {
+		"controller": "hci0",
+		"format": "{status} ",
+		"format-connected": "{device_alias} ",
+		"tooltip-format": "{controller_alias}",
+		"tooltip-format-connected": "{device_battery_percentage}% ",
+		"on-click": "blueman-manager"
+	},
+	"mpris": {
+		"format": "{status_icon}",
+		"status-icons": {
+			"playing": "",
+			"paused": "",
+			"stopped": ""
+		}
+	}
+}
